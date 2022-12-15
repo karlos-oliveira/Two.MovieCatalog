@@ -31,7 +31,8 @@
     "Permission:MovieStore": "Catálogo de Películas",
     "Permission:Movies": "Administración de películas",
     "Permission:Movies.Create": "Creando nuevas películas",
-    "Permission:Movies.Edit": "Editando las películas",
-    "Permission:Movies.Delete": "Eliminando las películas"
+    "Permission:Movies.Edit": "Editar las películas",
+    "Permission:Movies.Delete": "Eliminar las películas",
+    "Permission:Movies.ReadOnly": "Lista de películas"
   }
 }

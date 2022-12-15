@@ -13,6 +13,7 @@ public class MovieCatalogPermissionDefinitionProvider : PermissionDefinitionProv
         moviesPermission.AddChild(MovieCatalogPermissions.Movies.Create, L("Permission:Movies.Create"));
         moviesPermission.AddChild(MovieCatalogPermissions.Movies.Edit, L("Permission:Movies.Edit"));
         moviesPermission.AddChild(MovieCatalogPermissions.Movies.Delete, L("Permission:Movies.Delete"));
+        moviesPermission.AddChild(MovieCatalogPermissions.Movies.ReadOnly, L("Permission:Movies.ReadOnly"));
     }
 
     private static LocalizableString L(string name)

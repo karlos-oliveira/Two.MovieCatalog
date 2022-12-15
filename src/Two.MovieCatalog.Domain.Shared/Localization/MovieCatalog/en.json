@@ -30,9 +30,9 @@
     "Enum:Genre:8": "Comedy",
     "Permission:MovieStore": "Movie Catalog",
     "Permission:Movies": "Movie Management",
-    "Permission:Movies.Create": "Creating new movies",
-    "Permission:Movies.Edit": "Editing the movies",
-    "Permission:Movies.Delete": "Deleting the movies"
-
+    "Permission:Movies.Create": "Create new movies",
+    "Permission:Movies.Edit": "Edite the movies",
+    "Permission:Movies.Delete": "Delete the movies",
+    "Permission:Movies.ReadOnly": "List the movies"
   }
 }
