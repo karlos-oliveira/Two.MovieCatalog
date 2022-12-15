@@ -3,7 +3,7 @@
   "texts": {
     "Menu:Home": "Inicio",
     "Welcome": "Bienvenido",
-    "LongWelcomeMessage": "Bienvenido a esta aplicación. Este es un proyecto basado en el marco ABP para un desafío técnico de la empresa Tradingworks.",
+    "LongWelcomeMessage": "Bienvenido a esta aplicación. Este es un proyecto basado en el marco ABP.",
     "Menu:MovieCatalog": "Catálogo de películas",
     "Menu:Movies": "Películas",
     "Actions": "Acciones",
