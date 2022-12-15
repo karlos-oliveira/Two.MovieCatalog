@@ -1,7 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 5000
 
 COPY ["src/Two.MovieCatalog.Application/Two.MovieCatalog.Application.csproj", "./Two.MovieCatalog.Application/"]
 COPY ["src/Two.MovieCatalog.Application.Contracts/Two.MovieCatalog.Application.Contracts.csproj", "./Two.MovieCatalog.Application.Contracts/"]
