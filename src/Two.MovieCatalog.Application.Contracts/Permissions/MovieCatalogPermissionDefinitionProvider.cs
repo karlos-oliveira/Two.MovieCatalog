@@ -8,9 +8,11 @@ public class MovieCatalogPermissionDefinitionProvider : PermissionDefinitionProv
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var myGroup = context.AddGroup(MovieCatalogPermissions.GroupName);
-        //Define your own permissions here. Example:
-        //myGroup.AddPermission(MovieCatalogPermissions.MyPermission1, L("Permission:MyPermission1"));
+        var movieCatalogGroup = context.AddGroup(MovieCatalogPermissions.GroupName, L("Permission:MovieCatalog"));
+        var moviesPermission = movieCatalogGroup.AddPermission(MovieCatalogPermissions.Movies.Default, L("Permission:Movies"));
+        moviesPermission.AddChild(MovieCatalogPermissions.Movies.Create, L("Permission:Movies.Create"));
+        moviesPermission.AddChild(MovieCatalogPermissions.Movies.Edit, L("Permission:Movies.Edit"));
+        moviesPermission.AddChild(MovieCatalogPermissions.Movies.Delete, L("Permission:Movies.Delete"));
     }
 
     private static LocalizableString L(string name)
