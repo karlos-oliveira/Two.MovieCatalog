@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Two.MovieCatalog.Movies;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.BackgroundJobs.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -24,6 +26,8 @@ public class MovieCatalogDbContext :
     ITenantManagementDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
+
+    public DbSet<Movie> Movies { get; set; }
 
     #region Entities from the modules
 
@@ -75,11 +79,16 @@ public class MovieCatalogDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(MovieCatalogConsts.DbTablePrefix + "YourEntities", MovieCatalogConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.Entity<Movie>(b =>
+        {
+            b.ToTable(MovieCatalogConsts.DbTablePrefix + "Movies",
+                MovieCatalogConsts.DbSchema);
+            b.ConfigureByConvention();
+            b.Property(x => x.Name).IsRequired().HasMaxLength(128);
+            b.Property(x => x.Synopsis).IsRequired();
+            b.Property(x => x.ReleaseDate).IsRequired();
+            b.Property(x => x.Genre).IsRequired();
+            b.Property(x => x.Price).IsRequired();
+        });
     }
 }
