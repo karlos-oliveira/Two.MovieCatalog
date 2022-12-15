@@ -3,7 +3,7 @@
   "texts": {
     "Menu:Home": "Home",
     "Welcome": "Welcome",
-    "LongWelcomeMessage": "Welcome to this application. This is a project based on ABP framework for a technical challenge from Tradingworks company",
+    "LongWelcomeMessage": "Welcome to this application. This is a project based on ABP framework.",
     "Menu:MovieCatalog": "Movie Catalog",
     "Menu:Movies": "Movies",
     "Actions": "Actions",
