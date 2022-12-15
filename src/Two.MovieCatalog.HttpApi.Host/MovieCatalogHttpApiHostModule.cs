@@ -28,9 +28,9 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace Two.MovieCatalog;
-
 [DependsOn(
     typeof(MovieCatalogHttpApiModule),
     typeof(AbpAutofacModule),
@@ -192,6 +192,11 @@ public class MovieCatalogHttpApiHostModule : AbpModule
         {
             app.UseDeveloperExceptionPage();
         }
+
+        app.UseForwardedHeaders(new ForwardedHeadersOptions
+        {
+            ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+        });
 
         app.UseAbpRequestLocalization();
 
