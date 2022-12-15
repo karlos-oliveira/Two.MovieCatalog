@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\common.props" />
+  <Import Project="..\common.props" />
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -22,6 +22,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\MovieCatalog\*.json" />
     <Content Remove="Localization\MovieCatalog\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Localization\MovieCatalog\en.json" />
+    <None Remove="Localization\MovieCatalog\es.json" />
+    <None Remove="Localization\MovieCatalog\pt-BR.json" />
   </ItemGroup>
 
   <ItemGroup>
