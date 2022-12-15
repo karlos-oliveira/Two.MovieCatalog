@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
-# EXPOSE 80
+EXPOSE 80
 
 COPY ["src/Two.MovieCatalog.Application/Two.MovieCatalog.Application.csproj", "./Two.MovieCatalog.Application/"]
 COPY ["src/Two.MovieCatalog.Application.Contracts/Two.MovieCatalog.Application.Contracts.csproj", "./Two.MovieCatalog.Application.Contracts/"]
@@ -23,9 +23,6 @@ COPY src ./
 
 # .NET Core Build and Publish
 RUN dotnet publish "./Two.MovieCatalog.HttpApi.Host/Two.MovieCatalog.HttpApi.Host.csproj" -c Release -o /publish
-
-FROM nginx:1.19
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 # ASP.NET Core Runtime
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS runtime
